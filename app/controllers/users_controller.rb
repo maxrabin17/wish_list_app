@@ -6,6 +6,13 @@ class UsersController < ApplicationController
         render json: {user: user}, status: :created
     end
 
+    def show
+        if session[:user_id]
+            user = User.find(session[:user_id])
+            render json: {user: user}, status: :ok
+        end
+    end
+
     private
 
     def user_params
