@@ -16,12 +16,13 @@ const App = () => {
   const [errors, setErrors] = useState([])
 
   const handleUserLoginAndSignup = (data) => {
-    data.errors ? setErrors(data.errors) : setUser(data.user)// && setErrors([])
+    data.errors ? setErrors(data.errors) : setUser(data.user)
     if (!data.errors) {
       history.push('/')
+      setErrors([])
     }
   }
-    
+  
   const checkSessionId = () => {
     fetch('/me')
     .then(res => res.json())
@@ -45,7 +46,7 @@ const App = () => {
           <Login errors={ errors } handleUserLoginAndSignup={ handleUserLoginAndSignup }/>
         </Route>
         <Route exact path = '/logout'>
-          <Logout setUser={ setUser }/>
+          <Logout user={ user } setUser={ setUser }/>
         </Route>
       </Switch>
     </div>

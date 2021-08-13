@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import {useHistory} from 'react-router-dom'
+import { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
 const Logout = ({ setUser }) => {
     
@@ -9,9 +9,16 @@ const Logout = ({ setUser }) => {
             method: 'DELETE'
         }
         fetch('/logout', config)
-        setUser(null)
-        history.push('/login')
+            .then(res => res.json())
+            .then(data => handleLogout())
+            // handleLogout()
     })
+
+    const handleLogout = () => {
+        // debugger;
+        setUser(null)
+        // history.push('/')
+    }
     return (
         <div>
             Hellooooooo

@@ -5,7 +5,6 @@ import Errors from './Errors'
 
 const Login = ({errors, handleUserLoginAndSignup}) => {
     const [form, setForm] = useState({})
-    // const [errors, setErrors] = useState([])
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value })
     }
@@ -24,6 +23,11 @@ const Login = ({errors, handleUserLoginAndSignup}) => {
         fetch('/login', config)
             .then(res => res.json())
             .then(data => handleUserLoginAndSignup(data))
+            setForm({
+                username: "",
+                password: ""
+            })
+            e.target.reset()
     }
 
     return (

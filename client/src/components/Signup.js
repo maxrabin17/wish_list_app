@@ -6,7 +6,6 @@ import { useState } from 'react'
 const Signup = ({handleUserLoginAndSignup, errors}) => {
 
     const [form, setForm] = useState({})
-    // const [errors, setErrors] = useState([])
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value })
     }
