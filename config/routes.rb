@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # resources :comments
-  # resources :groups
-  # resources :wishes
+  resources :groups
+  resources :wishes
   resources :users
 
   get '/me', to: 'users#show'

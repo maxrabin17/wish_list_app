@@ -4,10 +4,10 @@ import React from 'react'
 const Errors = ({ errors }) => {
     
     const renderErrors = () => {
-        return errors.map(error => <p> {error} </p>)
+        return errors.map(error => <li> {error} </li>)
     }
     return (
-        <div>
+        <div className = "errors">
             {renderErrors()}
         </div>
     )

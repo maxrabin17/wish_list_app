@@ -2,9 +2,11 @@ import React from 'react'
 import {Button, Form} from 'react-bootstrap'
 import Errors from './Errors'
 import { useState } from 'react'
+import {useHistory} from 'react-router-dom'
 
 const Signup = ({handleUserLoginAndSignup, errors}) => {
 
+    const history = useHistory()
     const [form, setForm] = useState({})
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value })
@@ -24,11 +26,13 @@ const Signup = ({handleUserLoginAndSignup, errors}) => {
         fetch('/users', config)
             .then(res => res.json())
             .then(data => handleUserLoginAndSignup(data))
+            !errors ? history.push('/') : history.push('/signup')
     }
 
     return (
         <div>
-            <Form onSubmit={ handleSubmit } className="sign-up-form">
+            <Form onSubmit={handleSubmit} className="form">
+            <h1>Sign Up!</h1>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Username</Form.Label>
                     <Form.Control name="username" type="text" placeholder="Enter Username" onChange={ handleChange }/>

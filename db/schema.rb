@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_08_12_154226) do
 
   create_table "wishes", force: :cascade do |t|
     t.string "item"
-    t.integer "price"
+    t.string "price"
     t.string "image_url"
     t.integer "user_id"
     t.integer "group_id"

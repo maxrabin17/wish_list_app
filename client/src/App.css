@@ -1,8 +1,7 @@
-.navbar{
-  padding-right: 500px;
+#wishlist-app {
+  padding-right: 25px;
 }
-
-.sign-up-form {
+.form {
   height: 100%;
   width: 100%;
   max-width: 330px;
@@ -11,3 +10,29 @@
   margin-top: 3%;
   text-align: center;
 }
+
+.wishcard{
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-around;
+  gap: 2rem;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.buttons{
+  margin-left: auto;
+}
+
+.errors {
+  color: red;
+  text-align: center;
+}
+
+#logged-in{
+  text-align: center;
+}
+
