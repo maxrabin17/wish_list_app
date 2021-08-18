@@ -11,6 +11,8 @@ class GroupsController < ApplicationController
         render json: {groups: groups}, status: :ok
     end
 
+    
+
     private
 
     def group_params

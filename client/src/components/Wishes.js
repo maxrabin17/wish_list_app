@@ -22,7 +22,7 @@ const Wishes = ({ user, wishes, groups }) => {
                 </h1>
             </div>
             <div className="wishcard">
-                {wishes ? wishes.map(wish => <WishCard groups={ groups } wish={wish} />) : null}
+                {wishes ? wishes.map(wish => <WishCard key={ wish.id } groups={ groups } wish={wish} />) : null}
             </div>
         </>
     )

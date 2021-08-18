@@ -1,6 +1,5 @@
 import '../App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
-// import {Navbar, Nav, Container} from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
 import Signup from './Signup'
@@ -18,24 +17,24 @@ const App = () => {
   const [user, setUser] = useState(null)
   const [wishes, setWishes] = useState([])
   const [groups, setGroups] = useState([])
-  const [currentGroup, setCurrentGroup] = useState(null)
   const [errors, setErrors] = useState([])
+  // const [currentGroup, setCurrentGroup] = useState(null)
 
   const stateInit = () => {
-    fetchUser()
+    fetchUserAndWishes()
     fetchGroups()
   }
-
+  
   const fetchGroups = () => {
     fetch('/groups')
-      .then(res => res.json())
-      .then(data => setGroups(data.groups))
+    .then(res => res.json())
+    .then(data => setGroups(data.groups))
   }
-
-  const fetchUser = () => {
+  
+  const fetchUserAndWishes = () => {
     fetch(`/me`)
-      .then(res => res.json())
-      .then(data => setUser(data.user))
+    .then(res => res.json())
+    .then(data => setUserAndWishes(data))
   }
 
   const setUserAndWishes = (data) => {
