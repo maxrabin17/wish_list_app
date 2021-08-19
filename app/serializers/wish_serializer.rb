@@ -1,6 +1,7 @@
 class WishSerializer < ActiveModel::Serializer
   attributes :id, :item, :price, :image_url
-  belongs_to :user
-  belongs_to :group
-  # has_many :comments
+
+  # def group
+  #   {group: self.object.group.title}
+  # end
 end
