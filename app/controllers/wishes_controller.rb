@@ -16,15 +16,31 @@ class WishesController < ApplicationController
         end
     end
 
-    # def show
-    #     if session[:user_id]
-    #         user = User.find(session[:user_id])
-    #         wishes = {wishes: user.wishes}
-    #         render json: wishes, status: :ok
-    #     end
-    # end
+    def show
+        wish = Wish.find(params[:id])
+        render json: wish
+    end
+
+    def destroy
+        if session[:user_id]
+            # byebug
+            wish = find_wish
+            wish.destroy
+            head :no_content
+        end
+    end
+
+    def update
+        wish = find_wish
+        wish.update!(wish_params)
+        render json: {wish: wish}, status: :accepted
+    end
     
     private
+
+    def find_wish
+        Wish.find(params[:id])
+    end
 
     def wish_params
         params.permit(:item, :price, :image_url, :user_id, :group_id)

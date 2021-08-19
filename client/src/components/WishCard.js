@@ -1,26 +1,37 @@
-import React from 'react'
-import {Card, Button} from 'react-bootstrap'
+import React, {useState} from 'react'
+import { Card } from 'react-bootstrap'
+import WishBody from './WishBody'
+import EditWish from './EditWish'
 
-const WishCard = ({wish, groups}) => {
+const WishCard = ({ wish, groups, setWishes, wishes }) => {
+    
+    const { item, image_url, price, id } = wish;
+    const [wishCard, setWishCard] = useState(true)
+
+    const handleDeleteWish = () => {
+        let config = {
+            method: 'DELETE'
+        }
+
+        fetch(`/wishes/${id}`, config)
+        setWishes(
+            wishes.filter(wish => {
+                return wish.id !== id 
+            })
+        )
+    }
+
+    const renderClick = () => {
+        return wishCard ? <WishBody item={item} price={price} image_url={image_url} handleDeleteWish={handleDeleteWish} wishCard={wishCard} setWishCard={setWishCard}/> : <EditWish groups={groups} wish={wish} wishes={wishes} setWishes={setWishes} setWishCard={setWishCard}/>
+    }
+
     return (
         <div>
             <Card style={{ width: '18rem' }} className = "wishcard">
-                <Card.Img variant="top" src={wish.image_url} />
-                <Card.Body>
-                    <Card.Title>{wish.item}</Card.Title>
-                    <Card.Text>
-                        <p></p>
-                        <p>Price: ${ wish.price }</p>
-                    </Card.Text>
-                    <Button variant="outline-danger">Remove Wish</Button>
-                </Card.Body>
+                {renderClick()}
             </Card>
         </div>
     )
 }
 
 export default WishCard
-
-//  <div className="contact-card">
-//     {contacts.map(contact => <ContactCard contacts={contacts} contact={contact} setContacts={setContacts}/>)}
-// </div> 

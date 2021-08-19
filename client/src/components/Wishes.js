@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom'
 import WishCard from './WishCard'
 
-const Wishes = ({ user, wishes, groups }) => {
+const Wishes = ({ user, wishes, groups, setWishes }) => {
 
     const history = useHistory()
     const handleClick = () => {
@@ -22,14 +22,10 @@ const Wishes = ({ user, wishes, groups }) => {
                 </h1>
             </div>
             <div className="wishcard">
-                {wishes ? wishes.map(wish => <WishCard key={ wish.id } groups={ groups } wish={wish} />) : null}
+                {wishes ? wishes.map(wish => <WishCard key={wish.id} groups={groups} wish={wish} wishes={wishes} setWishes={ setWishes }/>) : null}
             </div>
         </>
     )
 }
 
 export default Wishes
-
-//  <div className="contact-card">
-//     {contacts.map(contact => <ContactCard contacts={contacts} contact={contact} setContacts={setContacts}/>)}
-// </div> 

@@ -88,7 +88,7 @@ const App = () => {
           <Logout user={user} setUser={setUser} setWishes={ setWishes }/>
         </Route>
         <Route exact path = '/wishes'>
-          <Wishes groups={groups} user={user} wishes={ wishes }/>
+          <Wishes groups={groups} user={user} wishes={wishes} setWishes={ setWishes }/>
         </Route>
         <Route exact path = '/wishes/new'>
           <CreateWish handleCreateWish={ handleCreateWish } groups={ groups } user={user} errors={errors}/>

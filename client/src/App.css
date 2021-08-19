@@ -1,6 +1,11 @@
 #wishlist-app {
   padding-right: 25px;
 }
+
+#edit-wish {
+  justify-content: center;
+}
+
 .form {
   height: 100%;
   width: 100%;
