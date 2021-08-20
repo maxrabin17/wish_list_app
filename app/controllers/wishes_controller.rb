@@ -3,9 +3,10 @@ class WishesController < ApplicationController
     
     def index
         if session[:user_id]
-            user = User.find(session[:user_id])
-            wishes = {wishes: user.wishes}
-            render json: wishes, status: :ok
+        #     user = User.find(session[:user_id])
+        #     wishes = {wishes: user.wishes}
+            render json: Wish.all, status: :ok
+        #     render json: wishes, status: :ok
         end
     end
 

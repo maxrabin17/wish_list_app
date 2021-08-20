@@ -6,6 +6,37 @@
   justify-content: center;
 }
 
+#home {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 500%;
+}
+
+#home-image {
+  border-radius: 20px;
+}
+
+#welcome{
+  font-size: 250%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#home-links{
+  margin-top: 175px;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(5, 204, 5);
+}
+
+.home-page {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+
 .form {
   height: 100%;
   width: 100%;

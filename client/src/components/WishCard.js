@@ -21,14 +21,14 @@ const WishCard = ({ wish, groups, setWishes, wishes }) => {
         )
     }
 
-    const renderClick = () => {
+    const handleWishCardBody = () => {
         return wishCard ? <WishBody item={item} price={price} image_url={image_url} handleDeleteWish={handleDeleteWish} wishCard={wishCard} setWishCard={setWishCard}/> : <EditWish groups={groups} wish={wish} wishes={wishes} setWishes={setWishes} setWishCard={setWishCard}/>
     }
 
     return (
         <div>
             <Card style={{ width: '18rem' }} className = "wishcard">
-                {renderClick()}
+                {handleWishCardBody()}
             </Card>
         </div>
     )
