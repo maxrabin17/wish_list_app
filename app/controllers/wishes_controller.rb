@@ -5,8 +5,8 @@ class WishesController < ApplicationController
         if session[:user_id]
         #     user = User.find(session[:user_id])
         #     wishes = {wishes: user.wishes}
-            render json: Wish.all, status: :ok
         #     render json: wishes, status: :ok
+        render json: Wish.all, include: ["group"], status: :ok
         end
     end
 
@@ -19,7 +19,7 @@ class WishesController < ApplicationController
 
     def show
         wish = Wish.find(params[:id])
-        render json: wish
+        render json: wish, include: ["group"]
     end
 
     def destroy

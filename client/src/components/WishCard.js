@@ -5,7 +5,7 @@ import EditWish from './EditWish'
 
 const WishCard = ({ wish, groups, setWishes, wishes }) => {
     
-    const { item, image_url, price, id } = wish;
+    const { item, image_url, price, id, group } = wish;
     const [wishCard, setWishCard] = useState(true)
 
     const handleDeleteWish = () => {
@@ -19,10 +19,11 @@ const WishCard = ({ wish, groups, setWishes, wishes }) => {
                 return wish.id !== id 
             })
         )
+        console.log(group)
     }
 
     const handleWishCardBody = () => {
-        return wishCard ? <WishBody item={item} price={price} image_url={image_url} handleDeleteWish={handleDeleteWish} wishCard={wishCard} setWishCard={setWishCard}/> : <EditWish groups={groups} wish={wish} wishes={wishes} setWishes={setWishes} setWishCard={setWishCard}/>
+        return wishCard ? <WishBody item={item} wish={wish} group={group} price={price} image_url={image_url} handleDeleteWish={handleDeleteWish} wishCard={wishCard} setWishCard={setWishCard}/> : <EditWish groups={groups} wish={wish} wishes={wishes} setWishes={setWishes} setWishCard={setWishCard}/>
     }
 
     return (

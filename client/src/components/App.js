@@ -28,7 +28,7 @@ const App = () => {
   const fetchGroups = () => {
     fetch('/groups')
     .then(res => res.json())
-    .then(data => setGroups(data.groups))
+    .then(data => setGroups(data))
   }
   
   const fetchUserAndWishes = () => {
@@ -39,7 +39,7 @@ const App = () => {
 
   const setUserAndWishes = (data) => {
     setUser(data.user)
-    setWishes(data.wishes)
+    setWishes(data.user.wishes)
   }
 
   const handleUserLoginAndSignup = (data) => {

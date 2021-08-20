@@ -7,13 +7,12 @@ class GroupsController < ApplicationController
     end
 
     def index
-        groups = Group.all
-        render json: {groups: groups}, status: :ok
+        render json: Group.all
     end
 
     def show
         group = Group.find(params[:id])
-        render json: group, include: ['wishes', 'wishes.group']
+        render json: group
     end
 
     private

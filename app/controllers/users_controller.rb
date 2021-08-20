@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     skip_before_action :authorize, only: [:create, :show, :index]
     
     def index
-        render json: User.all
+        render json: User.all, include: ['wishes', 'wishes.group']
     end
 
     def create
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     def show
         if session[:user_id]
             user = User.find(session[:user_id])
-            render json: {user: user, wishes: user.wishes}, status: :ok
+            render json: {user: user},include: ['wishes'], status: :ok
         end
     end
 
