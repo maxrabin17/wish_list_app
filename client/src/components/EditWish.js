@@ -23,7 +23,7 @@ const EditWish = ({wish, wishes, setWishes, groups, setWishCard}) => {
         }
         fetch(`/wishes/${wish.id}`, config)
         .then(resp => resp.json())
-        .then(data => setWishes(wishes.map(singleWish => singleWish.id === id ? data.wish : singleWish))
+        .then(data => setWishes(wishes.map(singleWish => singleWish.id === id ? data : singleWish))
         )
         setWishCard(true)
     }

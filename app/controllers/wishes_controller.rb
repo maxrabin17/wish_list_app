@@ -34,7 +34,7 @@ class WishesController < ApplicationController
     def update
         wish = find_wish
         wish.update!(wish_params)
-        render json: {wish: wish}, status: :accepted
+        render json: wish, status: :accepted
     end
     
     private
