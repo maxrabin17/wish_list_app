@@ -13,7 +13,7 @@ class WishesController < ApplicationController
     def create
         wish = @current_user.wishes.build(wish_params)
         if wish.save!
-            render json: {wish: wish},status: :created
+            render json: wish,status: :created
         end
     end
 

@@ -21,7 +21,7 @@ const App = () => {
   // const [currentGroup, setCurrentGroup] = useState(null)
 
   const stateInit = () => {
-    fetchUserAndWishes()
+    // fetchUserAndWishes()
     fetchGroups()
   }
   
@@ -31,15 +31,15 @@ const App = () => {
     .then(data => setGroups(data))
   }
   
-  const fetchUserAndWishes = () => {
-    fetch(`/me`)
-    .then(res => res.json())
-    .then(data => setUserAndWishes(data))
-  }
+  // const fetchUserAndWishes = () => {
+  //   fetch(`/me`)
+  //   .then(res => res.json())
+  //   .then(data => setUserAndWishes(data))
+  // }
 
   const setUserAndWishes = (data) => {
-    setUser(data.user)
-    setWishes(data.user.wishes)
+    setUser(data)
+    setWishes(data.wishes)
   }
 
   const handleUserLoginAndSignup = (data) => {
@@ -59,7 +59,7 @@ const App = () => {
   }
 
   const handleCreateWish = (data) => {
-        data.errors ? setErrors(data.errors) : setWishes([...wishes, data.wish])
+        data.errors ? setErrors(data.errors) : setWishes([...wishes, data])
         if (!data.errors) {
           history.push('/wishes') 
             setErrors([])

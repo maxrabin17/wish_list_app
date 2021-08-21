@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Button, Nav } from 'react-bootstrap'
 
-const WishBody = ({ item, price, image_url, group, handleDeleteWish, setWishCard,  wish }) => {
+const WishBody = ({ item, price, image_url, group, handleDeleteWish, setWishCard,  wish, wishes }) => {
 
     const handleClick = () => {
         setWishCard(false)
@@ -13,7 +13,7 @@ const WishBody = ({ item, price, image_url, group, handleDeleteWish, setWishCard
             <Card.Body>
                 <Card.Title>{item}</Card.Title>
                 <Card.Text>
-                    <p>Group: </p>
+                    <p>Group: { wish.group.title }</p>
                     <p>Price: ${price}</p>
                 </Card.Text>
                 <Button onClick={handleDeleteWish} variant="outline-danger">Remove Wish</Button>
