@@ -3,10 +3,7 @@ class WishesController < ApplicationController
     
     def index
         if session[:user_id]
-        #     user = User.find(session[:user_id])
-        #     wishes = {wishes: user.wishes}
-        #     render json: wishes, status: :ok
-        render json: Wish.all, include: ["group"], status: :ok
+            render json: Wish.all, include: ["group"], status: :ok
         end
     end
 
@@ -24,7 +21,6 @@ class WishesController < ApplicationController
 
     def destroy
         if session[:user_id]
-            # byebug
             wish = find_wish
             wish.destroy
             head :no_content

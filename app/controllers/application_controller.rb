@@ -22,5 +22,3 @@ before_action :authorize
         render json: { errors: ["Not Authorized"] }, status: :unauthorized
     end
 end
-
-# if !session[:user_id]

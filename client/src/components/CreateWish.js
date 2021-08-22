@@ -32,9 +32,9 @@ const CreateWish = ({errors, groups, handleCreateWish}) => {
         return groups.map(group => <option value={group.id}>{group.title}</option>)
     }
 
-    const handleClick = () => {
-        history.push('/group/new')
-    }
+    // const handleClick = () => {
+    //     history.push('/group/new')
+    // }
 
     return (
         <div>
@@ -60,11 +60,6 @@ const CreateWish = ({errors, groups, handleCreateWish}) => {
                 </select>
                 <br />
                 <br />
-                <Button variant="outline-success" type="click" onClick={ handleClick }>
-                    Create Group
-                </Button>
-                <br />
-                <h1>OR</h1>
                 <Button variant="outline-success" type="submit">
                     Create Wish
                 </Button>

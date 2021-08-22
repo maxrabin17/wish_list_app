@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Button, Nav } from 'react-bootstrap'
 
-const WishBody = ({ item, price, image_url, group, handleDeleteWish, setWishCard,  wish, wishes }) => {
+const WishBody = ({ item, price, image_url, handleDeleteWish, setWishCard,  wish }) => {
 
     const handleClick = () => {
         setWishCard(false)

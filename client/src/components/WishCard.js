@@ -19,7 +19,6 @@ const WishCard = ({ wish, groups, setWishes, wishes }) => {
                 return wish.id !== id 
             })
         )
-        console.log(group)
     }
 
     const handleWishCardBody = () => {

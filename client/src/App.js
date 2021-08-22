@@ -1,15 +1,15 @@
-import '../App.css';
+import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
-import Signup from './Signup'
-import Login from './Login'
-import NavBar from './Navbar'
-import Home from './Home'
-import Logout from './Logout'
-import Wishes from './Wishes'
-import CreateWish from './CreateWish'
-import CreateGroup from './CreateGroup'
+import Signup from '../src/components/Signup'
+import Login from '../src/components/Login'
+import NavBar from '../src/components/Navbar'
+import Home from '../src/components/Home'
+import Logout from '../src/components/Logout'
+import Wishes from '../src/components/Wishes'
+import CreateWish from '../src/components/CreateWish'
+import CreateGroup from '../src/components/CreateGroup'
 
 const App = () => {
 
@@ -18,10 +18,9 @@ const App = () => {
   const [wishes, setWishes] = useState([])
   const [groups, setGroups] = useState([])
   const [errors, setErrors] = useState([])
-  // const [currentGroup, setCurrentGroup] = useState(null)
 
   const stateInit = () => {
-    // fetchUserAndWishes()
+    fetchUserAndWishes()
     fetchGroups()
   }
   
@@ -31,11 +30,11 @@ const App = () => {
     .then(data => setGroups(data))
   }
   
-  // const fetchUserAndWishes = () => {
-  //   fetch(`/me`)
-  //   .then(res => res.json())
-  //   .then(data => setUserAndWishes(data))
-  // }
+  const fetchUserAndWishes = () => {
+    fetch(`/me`)
+    .then(res => res.json())
+    .then(data => setUserAndWishes(data))
+  }
 
   const setUserAndWishes = (data) => {
     setUser(data)
