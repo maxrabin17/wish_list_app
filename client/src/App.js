@@ -25,13 +25,13 @@ const App = () => {
   }
   
   const fetchGroups = () => {
-    fetch('/groups')
+    fetch('/api/groups')
     .then(res => res.json())
     .then(data => setGroups(data))
   }
   
   const fetchUserAndWishes = () => {
-    fetch(`/me`)
+    fetch(`/api/me`)
     .then(res => res.json())
     .then(data => setUserAndWishes(data))
   }

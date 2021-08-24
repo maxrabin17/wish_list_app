@@ -22,7 +22,7 @@ const CreateWish = ({errors, groups, handleCreateWish}) => {
             },
             body: JSON.stringify(form)
         }
-        fetch('/wishes', config)
+        fetch('/api/wishes', config)
             .then(res => res.json())
             .then(data => handleCreateWish(data))
             errors ? history.push('/wishes/new') : history.push('/wishes')

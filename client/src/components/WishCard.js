@@ -13,7 +13,7 @@ const WishCard = ({ wish, groups, setWishes, wishes }) => {
             method: 'DELETE'
         }
 
-        fetch(`/wishes/${id}`, config)
+        fetch(`/api/wishes/${id}`, config)
         setWishes(
             wishes.filter(wish => {
                 return wish.id !== id 

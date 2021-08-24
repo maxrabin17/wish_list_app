@@ -21,7 +21,7 @@ const EditWish = ({wish, wishes, setWishes, groups, setWishCard}) => {
             },
             body: JSON.stringify(form)
         }
-        fetch(`/wishes/${wish.id}`, config)
+        fetch(`/api/wishes/${wish.id}`, config)
         .then(resp => resp.json())
         .then(data => setWishes(wishes.map(singleWish => singleWish.id === id ? data : singleWish))
         )
