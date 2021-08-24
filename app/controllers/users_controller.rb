@@ -12,10 +12,11 @@ class UsersController < ApplicationController
     end
 
     def show
-        if session[:user_id]
+        # if session[:user_id]
             user = User.find(session[:user_id])
             render json: user, status: :ok
-        end
+        # end
+        
     end
 
     private
