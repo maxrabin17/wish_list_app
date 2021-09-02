@@ -5,4 +5,11 @@ class Wish < ApplicationRecord
     validates :item, presence: true
     validates :price, presence: true
     validates :image_url, presence: true
+
+    def self.search(name)
+        Wish.where("item LIKE ?", "%#{name}%")
+    end
+
+    # scope :search, -> (name) {self.where("item LIKE ?", "%#{name}%")}
+
 end

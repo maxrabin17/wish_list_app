@@ -16,7 +16,7 @@ const Logout = ({ setUser, setWishes }) => {
         let config = {
             method: 'DELETE'
         }
-        fetch('/api/logout', config)
+        fetch('/logout', config)
         handleLogout()
     })
 

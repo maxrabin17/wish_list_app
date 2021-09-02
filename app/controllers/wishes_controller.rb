@@ -3,14 +3,14 @@ class WishesController < ApplicationController
     
     def index
         if session[:user_id]
-            render json: Wish.all, include: ["group"], status: :ok
+            render json:  Wish.search(params[:s]), include: ["group"], status: :ok
         end
     end
 
     def create
         wish = @current_user.wishes.build(wish_params)
         if wish.save!
-            render json: wish,status: :created
+            render json: wish, status: :created
         end
     end
 

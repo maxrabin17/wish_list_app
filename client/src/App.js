@@ -24,14 +24,16 @@ const App = () => {
     fetchGroups()
   }
   
+  useEffect(stateInit, [])
+  
   const fetchGroups = () => {
-    fetch('/api/groups')
+    fetch('/groups')
     .then(res => res.json())
     .then(data => setGroups(data))
   }
   
   const fetchUserAndWishes = () => {
-    fetch(`/api/me`)
+    fetch(`/me`)
     .then(res => res.json())
     .then(data => setUserAndWishes(data))
   }
@@ -65,7 +67,6 @@ const App = () => {
         }
   }
 
-  useEffect(stateInit, [])
 
   return (
     <div className="App">

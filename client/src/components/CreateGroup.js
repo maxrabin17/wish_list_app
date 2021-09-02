@@ -20,7 +20,7 @@ const CreateGroup = ({handleCreateGroup}) => {
             },
             body: JSON.stringify(form)
         }
-        fetch('/api/groups', config)
+        fetch('/groups', config)
             .then(res => res.json())
             .then(data => handleCreateGroup(data))
             // errors ? history.push('/login') : history.push('/wishes')

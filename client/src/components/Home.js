@@ -13,7 +13,7 @@ const Home = ({ user }) => {
         <div className="home-page">
             <h1 id="home" >Wishlist App</h1>
             <p id="welcome">An easy to use app to create and save wishes.</p>
-            <img id="home-image" src="https://clipartion.com/wp-content/uploads/2015/11/shooting-star-icons-free-download.jpg" alt="Girl in a jacket" width="400" height="300"/>
+            <img id="home-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq7mv4QSGlwYfP2k7Gpa9nPcOsSLwupJNGKA&usqp=CAU" alt="" width="400" height="300"/>
             {/* <h1>
                 {user ? `Welcome to ${user.username}'s Wishlist` : null}
             </h1> */}
